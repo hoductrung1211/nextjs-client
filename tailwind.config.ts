@@ -14,19 +14,20 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'dark': '#424245',
+        'dark-light': '#6E6E73',
+        'concrete': '#95A5A6',
+        'greensea': '#16A085',
+        'pomegranate': '#C0392B',
+        'belizehole': '#2980B9',
+        'grey': '#efefef',
+        'scream': '#F5F5F7'
+      },
+      lineHeight: {
+        '14': '3.5rem'
+      }
     },
-    colors: {
-      'dark': '#424245',
-      'dark-light': '#6E6E73',
-      'concrete': '#95A5A6',
-      'greensea': '#16A085',
-      'pomegranate': '#C0392B',
-      'belizehole': '#2980B9',
-      'grey': '#efefef'
-    },
-    lineHeight: {
-      '14': '3.5rem'
-    }
   },
   plugins: [],
 }
