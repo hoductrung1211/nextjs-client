@@ -16,14 +16,4 @@ export const leftNavigation = [
         href: '/'
     },
 ];
-
-export const rightNavigation = [
-    {
-        text: 'Login',
-        href: '/login'
-    },
-    {
-        text: 'Sign up',
-        href: '/sign-up'
-    },
-]
+ 
