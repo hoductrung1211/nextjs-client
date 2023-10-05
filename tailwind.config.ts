@@ -9,6 +9,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        '112': '28rem',
+        '120': '30rem',
+        '128': '32rem'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -21,11 +26,40 @@ const config: Config = {
         'greensea': '#16A085',
         'pomegranate': '#C0392B',
         'belizehole': '#2980B9',
-        'grey': '#efefef',
+        'grey': '#f0f0f0',
         'scream': '#F5F5F7'
+      },
+      backdropBlur: {
+        'xs': '2px'
       },
       lineHeight: {
         '14': '3.5rem'
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': {
+            // 'background-color': '#7f8c8d'
+            'opacity': '0.4'
+          },
+          '100%': {
+            // 'background-color': '#00000099'
+            'opacity': '1'
+          }
+        },
+        'zoom-in': {
+          '0%': {
+            // 'background-color': '#7f8c8d'
+            'transform': 'scale(0.8) translateY(-10%)', 
+          },
+          '100%': {
+            // 'background-color': '#00000099'
+            'transform': 'scale(1) translateY(0)', 
+          }
+        }
+      },
+      animation: {
+        'fade-in': 'fade-in 100ms ease-in-out forwards',
+        'zoom-in': 'zoom-in 200ms ease-out forwards'
       }
     },
   },

@@ -16,7 +16,7 @@ html {
 
 input {
     outline: none;
-    background-color: #F5F5F7;
+    background-color: #F5F5F7; 
 }
  
 
@@ -24,3 +24,17 @@ input {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+
+/* .animate-fade-in {
+    animation: fadeIn 200ms ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        background-color: #7f8c8d;
+    }
+    to {
+        background-color: #000000cc;
+    }
+} */
