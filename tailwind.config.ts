@@ -10,9 +10,29 @@ const config: Config = {
   theme: {
     extend: {
       width: {
+        '76': '19rem',
         '112': '28rem',
         '120': '30rem',
-        '128': '32rem'
+        '128': '32rem',
+        '140': '35rem',
+        '160': '40rem',
+        '180': '45rem',
+        '200': '50rem',
+        '220': '55rem',
+        '240': '60rem',
+        '260': '65rem',
+        '280': '70rem',
+      },
+      height: {
+        '112': '28rem',
+        '120': '30rem',
+        '128': '32rem',
+        '140': '35rem',
+        '160': '40rem',
+        '180': '45rem',
+        '200': '50rem',
+        '220': '55rem',
+        '240': '60rem',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

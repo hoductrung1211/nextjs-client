@@ -35,12 +35,15 @@ export default function Signup({
                 email,
                 password,
                 confirmPassword
-            }) 
+            });
+
+            alert("Register successfully!");
         }
         catch (error) {
             if (isAxiosError(error)) {
                 console.log(error);
             }
+            alert("Register failed!");
         }
     }
 
@@ -72,7 +75,7 @@ export default function Signup({
     }
 
     return (
-        <div className="w-120 px-5 py-8 flex flex-col gap-10 border border-concrete bg-grey shadow-md rounded-xl">
+        <div className="w-120 px-6 py-8 flex flex-col gap-12 border border-concrete bg-grey shadow-md rounded-xl">
             <h2 className="text-2xl text-center font-semibold">Sign up</h2>
             <section className="flex flex-col gap-4 ">
                 <TextFieldGroup

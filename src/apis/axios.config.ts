@@ -1,7 +1,7 @@
 import originAxios from 'axios';
 
 const axios = originAxios.create({
-    baseURL: "https://localhost:7128/api/", // change this
+    // baseURL: "https://localhost:7128/api/", // change this
 });
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.put['Content-Type'] = 'application/json';

@@ -6,17 +6,30 @@ import Link from "next/link";
 import Button from "../components/inputs/Button";
 import useModel from "../hooks/useModel";
 import Signup from "./Signup";
+import { isAxiosError } from "axios";
+import { login } from "../apis/auth";
 
 export default function Login({
 
 }) {
-    const [showModel, setModel] = useModel();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [_, setModel] = useModel();
+    const [username, setUsername] = useState("hoductrung");
+    const [password, setPassword] = useState("123456");
     const [isRemembered, setIsRemembered] = useState(false);
 
-    function handleLogin() {
-
+    async function handleLogin() {
+        try {
+            await login({
+                username,
+                password
+            });
+            alert("Login successfully!");
+        }
+        catch (error) {
+            if (isAxiosError(error)) {
+                alert("Login failed!");
+            }
+        }
     }
 
     function navToSignup() {
@@ -24,7 +37,7 @@ export default function Login({
     }
 
     return (
-        <div className="w-120 px-5 py-8 flex flex-col gap-10 border border-concrete bg-grey shadow-md rounded-xl">
+        <div className="w-120 px-6 py-8 flex flex-col gap-12 border border-concrete bg-grey shadow-md rounded-xl">
             <h2 className="text-2xl text-center font-semibold">Login</h2>
             <section className="flex flex-col gap-4 ">
                 <TextField

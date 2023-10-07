@@ -1,7 +1,7 @@
 'use client';
 import Logo from "@/src/components/navigation/Logo";
 import Link from "next/link";
-import { leftNavigation } from "@/src/utils/config/headerNavigation";
+import { leftNavigation } from "@/src/config/headerNavigation";
 import useModel from "../hooks/useModel";
 import Login from "./Login";
 import Signup from "./Signup";

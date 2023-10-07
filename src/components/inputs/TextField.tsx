@@ -3,22 +3,22 @@ import Icon from "../built-in/Icon"
 
 interface ITextFieldProps {
     icon?: string,
-    value: string,
+    value?: string,
     placeholder?: string,
     type?: HTMLInputTypeAttribute,
     isError?: boolean,
-    onChange: (value: string) => void,
+    onChange?: (value: string) => void,
 }
 
 const inputClassName = "w-full h-12";
 
 export default function TextField({
     icon = '',
-    value,
+    value = '',
     placeholder,
     type = "text",
     isError = false,
-    onChange,
+    onChange = () => {},
 }: ITextFieldProps) {
 
     let input = <input
@@ -59,7 +59,7 @@ export default function TextField({
 function PasswordInput({
     value,
     placeholder, 
-    onChange
+    onChange = () => {}
 }: ITextFieldProps) {
     const [type, setType] = useState<HTMLInputTypeAttribute>("password");
     
