@@ -19,12 +19,10 @@ input {
     background-color: #F5F5F7; 
 }
  
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 
 /* .animate-fade-in {
     animation: fadeIn 200ms ease-in-out forwards;
@@ -38,3 +36,20 @@ input {
         background-color: #000000cc;
     }
 } */
+
+.animate-back-in-right {
+    animation: backInRight 400ms ease-out forwards;
+    transition: all;
+}
+
+@keyframes backInRight {
+    0% {
+        transform: translateX(2000px) scale(30%);
+    }
+    75% {
+        transform: translateX(0) scale(75%);
+    }
+    100% {
+        transform: translateX(0) scale(100%);
+    }
+}

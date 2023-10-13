@@ -1,10 +1,11 @@
-import Header from '@/src/layouts/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { ModelContainer } from '@/src/hooks/useModel'
+import { ActiveNavContainer } from '@/src/hooks/useActiveNav'
+import { AlertContainer } from '@/src/hooks/useAlert'
 
-const inter = Poppins({
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
   style: ['normal', 'italic']
@@ -26,10 +27,14 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
       </head>
-      <body className={inter.className}>
+      <body className={poppins.className}>
+        <AlertContainer>
         <ModelContainer>
+        <ActiveNavContainer>
           {children}
+        </ActiveNavContainer>
         </ModelContainer>
+        </AlertContainer>  
       </body>
     </html>
   )

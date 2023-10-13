@@ -1,4 +1,7 @@
+'use client';
+import { managerNavigations } from "@/src/config/sidebarNavigation"
 import Sidebar from "@/src/layouts/Sidebar"
+import GenerateNav from "@/src/layouts/GenerateNav"
 
 export default function Layout({
     children
@@ -7,7 +10,9 @@ export default function Layout({
 }) {
     return (
         <div className="flex">
-            <Sidebar />
+            <Sidebar> 
+                <GenerateNav node={managerNavigations} />
+            </Sidebar>
             {children}
         </div>
     )

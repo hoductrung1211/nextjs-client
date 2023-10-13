@@ -1,9 +1,9 @@
-'use client';
-
 import { useState } from "react";
 import Icon from "../built-in/Icon";
+import { useRouter } from "next/navigation";
+import useActiveNav from "@/src/hooks/useActiveNav";
 
-const navBaseClass = " py-1 rounded-md text-start font-semibold text-dark-light text-opacity-80 hover:text-opacity-100  hover:bg-slate-200 "
+const navBaseClass = " py-1 rounded-md text-start font-semibold text-opacity-90 hover:text-opacity-100 text-dark-light hover:bg-slate-200 "
 
 export function NavGroup({
     text,
@@ -13,14 +13,17 @@ export function NavGroup({
     children?: React.ReactNode
 }) {
     const [isShow, setIsShow] = useState(true);
+    const [isMouseOver, setIsMouseOver] = useState(false);
 
     return (
-        <section className="flex flex-col gap-2 transition">
+        <section className={"flex flex-col rounded-md gap-2 transition px-2" + (isMouseOver ? " bg-slate-200" : "")}>
             {
                 text &&
                 <button
-                    className={"w-fit px-2 " + navBaseClass}
-                    onClick={() => setIsShow(!isShow)}
+                    className={"w-fit px-2 -ml-2" + navBaseClass}
+                        onClick={() => setIsShow(!isShow)}
+                        onMouseOver={() => setIsMouseOver(true)}
+                        onMouseOut={() => setIsMouseOver(false)}
                 >
                     {text}
                 </button>
@@ -33,14 +36,32 @@ export function NavGroup({
 }
 
 export default function Nav({
+    id,
     icon,
+    onClick,
+    href,
     children
 }: {
+    id: number,
     icon?: string,
+    href?: string,
+    onClick?: () => void
     children?: React.ReactNode
 }) {
+    const [activeNavId, setActiveNavId] = useActiveNav();
+    const router = useRouter();
+
+    function handleClick() {
+        setActiveNavId(id);
+        if (href) router.push(href);
+        onClick?.();
+    }
+    
     return (
-        <button className={navBaseClass + "h-10 px-3 flex items-center gap-3"}>
+        <button
+            className={navBaseClass + "h-10 px-3 flex items-center gap-3 " + (activeNavId == id ? " text-opacity-100  bg-slate-200 " : "")}
+            onClick={handleClick}
+        >
             {
                 icon && <Icon name={icon} size="lg" />
             }
