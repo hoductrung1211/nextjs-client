@@ -5,7 +5,6 @@ const ModelContext = createContext<[Dispatch<SetStateAction<boolean>>, Dispatch<
 
 export default function useModel() {
     const setShowModel = useContext(ModelContext);
- 
 
     return setShowModel;
 }

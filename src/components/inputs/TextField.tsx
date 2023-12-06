@@ -2,6 +2,7 @@ import { HTMLInputTypeAttribute, useState } from "react"
 import Icon from "../built-in/Icon"
 
 interface ITextFieldProps {
+    name?: string,
     icon?: string,
     value?: string,
     placeholder?: string,
@@ -14,6 +15,7 @@ const inputClassName = "w-full h-12";
 
 export default function TextField({
     icon = '',
+    name,
     value = '',
     placeholder,
     type = "text",
@@ -22,6 +24,7 @@ export default function TextField({
 }: ITextFieldProps) {
 
     let input = <input
+                    name={name}
                     className={inputClassName}
                     placeholder={placeholder ?? ''}
                     type={type}
@@ -33,7 +36,7 @@ export default function TextField({
             <PasswordInput  
                 placeholder={placeholder ?? ''}
                 type={type}
-                value={value} 
+                value={value}
                 onChange={onChange}
             />
 
@@ -57,6 +60,7 @@ export default function TextField({
  
 
 function PasswordInput({
+    name,
     value,
     placeholder, 
     onChange = () => {}
@@ -67,6 +71,7 @@ function PasswordInput({
         <>
             <input
                 className={inputClassName}
+                name={name}
                 placeholder={placeholder ?? ''}
                 type={type}
                 value={value}

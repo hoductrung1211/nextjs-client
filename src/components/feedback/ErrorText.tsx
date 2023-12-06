@@ -6,7 +6,7 @@ export default function ErrorText({
     children
 }: IErrorTextProps) {
     return (
-        <p className="pl-3 font-semibold text-red-500">
+        <p className="pl-3  text-red-500">
             {children}
         </p>
     )

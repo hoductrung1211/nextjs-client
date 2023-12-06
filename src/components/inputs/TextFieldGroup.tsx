@@ -4,6 +4,7 @@ import ErrorText from "../feedback/ErrorText";
 
 interface ITextFieldGroupProps {
     icon?: string,
+    name?: string,
     value: string,
     placeholder?: string,
     type?: HTMLInputTypeAttribute,
@@ -16,6 +17,7 @@ interface ITextFieldGroupProps {
 export default function TextFieldGroup({
     icon,
     value,
+    name,
     placeholder,
     type,
     onChange,
@@ -40,6 +42,7 @@ export default function TextFieldGroup({
             {title && <h4 className="font-medium">{title}</h4>}
             <TextField
                 icon={icon}
+                name={name}
                 value={value}
                 placeholder={placeholder}
                 type={type}

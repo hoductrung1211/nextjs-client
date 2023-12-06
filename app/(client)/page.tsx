@@ -1,5 +1,4 @@
 'use client';
-
 import Image from "next/image";
 import heroImgSrc from "./assets/login_01.png";
 import thumbnail01 from "./assets/card_01.jpg";
@@ -30,8 +29,8 @@ function Hero() {
     <section className="bg-grey">
       <div className="container flex justify-between">
         <div className="flex-shrink-0 flex flex-col justify-center">
-          <h2 className="mb-9 text-4xl font-medium">Create the future you want</h2>
-          <p className="mb-2 text-xl">Find your next job at <span className="text-greensea font-bold">TeS</span></p>
+          <h2 className="mb-9 text-4xl font-medium">Tạo ra tương lai bạn muốn</h2>
+          <p className="mb-2 text-xl">Tìm công việc tiếp theo của bạn tại <span className="text-greensea font-bold">TeS</span></p>
           <SearchBox
             value={searchValue}
             placeholder="Search by job title, or keyword..."
@@ -54,7 +53,7 @@ function LifeAtCompany() {
   return (
     <section className="py-12">
       <div className="container flex flex-col gap-4">
-        <SectionText>Life at TeS</SectionText>
+        <SectionText>Cuộc sống tại TeS</SectionText>
         <div className="flex gap-5">
           <Card
             title="Benefit"

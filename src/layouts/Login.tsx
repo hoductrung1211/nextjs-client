@@ -8,13 +8,14 @@ import useModel from "../hooks/useModel";
 import Signup from "./Signup";
 import { isAxiosError } from "axios";
 import { login } from "../apis/auth";
+import ForgotPassword from "./ForgotPassword";
 
 export default function Login({
 
 }) {
     const [_, setModel] = useModel();
-    const [username, setUsername] = useState("hoductrung");
-    const [password, setPassword] = useState("123456");
+    const [username, setUsername] = useState("dinhtruongson");
+    const [password, setPassword] = useState("Dinhtruongson@123");
     const [isRemembered, setIsRemembered] = useState(false);
 
     async function handleLogin() {
@@ -34,6 +35,10 @@ export default function Login({
 
     function navToSignup() {
         setModel(<Signup />)
+    }
+
+    function navToForgotPassword() {
+        setModel(<ForgotPassword />)
     }
 
     return (
@@ -60,7 +65,7 @@ export default function Login({
                         text="Remember password"
                     />
 
-                    <Link className="underline text-blue-400" href={""}>Forgot password</Link>
+                    <button className="underline text-blue-400"  onClick={navToForgotPassword}>Forgot password</button>
                 </div>
             </section>
             <section className="flex flex-col gap-6 ">
